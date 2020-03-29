@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="EQ2Login|Win32">
+      <Configuration>EQ2Login</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>EQ2Login</ProjectName>
+    <ProjectGuid>{9E5C2B1F-861D-47BC-A512-A783D7C8F184}</ProjectGuid>
+    <RootNamespace>EQ2 Login</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">$(SolutionDir)loginserver\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">.\$(ProjectName)__Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">false</LinkIncremental>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">C:\Users\Kirmmin\Documents\EQ2Emu\EQ2\source\depends\zlib\include;C:\Users\Kirmmin\Documents\EQ2Emu\EQ2\source\depends\mariadb-10.1.19\include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">C:\Users\Kirmmin\Documents\EQ2Emu\EQ2\source\depends\mariadb-10.1.19\lib\32-debug;C:\Users\Kirmmin\Documents\EQ2Emu\EQ2\source\depends\zlib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">
+    <TargetName>$(ProjectName)__Debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='EQ2Login|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../Build/Login.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/D EQDEBUG=5 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0400;WIN32;NDEBUG;_CONSOLE;LOGIN; EQ2; EQN_DEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>
+      </StringPooling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <ShowIncludes>false</ShowIncludes>
+      <OmitFramePointers />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderFile />
+      <BrowseInformationFile />
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;ws2_32.lib;mysqlclient.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>
+      </SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\Log.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="LoginAccount.cpp" />
+    <ClCompile Include="LoginDatabase.cpp" />
+    <ClCompile Include="LWorld.cpp" />
+    <ClCompile Include="net.cpp" />
+    <ClCompile Include="PacketHeaders.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="..\common\Condition.cpp" />
+    <ClCompile Include="..\common\ConfigReader.cpp" />
+    <ClCompile Include="..\common\CRC16.cpp" />
+    <ClCompile Include="..\common\Crypto.cpp" />
+    <ClCompile Include="..\common\database.cpp" />
+    <ClCompile Include="..\common\dbcore.cpp" />
+    <ClCompile Include="..\common\debug.cpp" />
+    <ClCompile Include="..\common\emu_opcodes.cpp" />
+    <ClCompile Include="..\common\EQEMuError.cpp" />
+    <ClCompile Include="..\common\EQPacket.cpp" />
+    <ClCompile Include="..\common\EQStream.cpp" />
+    <ClCompile Include="..\common\EQStreamFactory.cpp" />
+    <ClCompile Include="..\common\misc.cpp" />
+    <ClCompile Include="..\common\MiscFunctions.cpp" />
+    <ClCompile Include="..\common\Mutex.cpp" />
+    <ClCompile Include="..\common\opcodemgr.cpp" />
+    <ClCompile Include="..\common\packet_dump.cpp" />
+    <ClCompile Include="..\common\packet_functions.cpp" />
+    <ClCompile Include="..\common\PacketStruct.cpp" />
+    <ClCompile Include="..\common\RC4.cpp" />
+    <ClCompile Include="..\common\TCPConnection.cpp" />
+    <ClCompile Include="..\common\timer.cpp" />
+    <ClCompile Include="..\common\xmlParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\Log.h" />
+    <ClInclude Include="..\common\LogTypes.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="login_opcodes.h" />
+    <ClInclude Include="login_structs.h" />
+    <ClInclude Include="LoginAccount.h" />
+    <ClInclude Include="LoginDatabase.h" />
+    <ClInclude Include="LWorld.h" />
+    <ClInclude Include="net.h" />
+    <ClInclude Include="PacketHeaders.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="..\common\Condition.h" />
+    <ClInclude Include="..\common\ConfigReader.h" />
+    <ClInclude Include="..\common\CRC16.h" />
+    <ClInclude Include="..\common\Crypto.h" />
+    <ClInclude Include="..\common\database.h" />
+    <ClInclude Include="..\common\DataBuffer.h" />
+    <ClInclude Include="..\common\dbcore.h" />
+    <ClInclude Include="..\common\debug.h" />
+    <ClInclude Include="..\common\emu_opcodes.h" />
+    <ClInclude Include="..\common\EQ2_Common_Structs.h" />
+    <ClInclude Include="..\common\EQEMuError.h" />
+    <ClInclude Include="..\common\EQPacket.h" />
+    <ClInclude Include="..\common\EQStream.h" />
+    <ClInclude Include="..\common\EQStreamFactory.h" />
+    <ClInclude Include="..\common\GlobalHeaders.h" />
+    <ClInclude Include="..\common\linked_list.h" />
+    <ClInclude Include="..\common\login_oplist.h" />
+    <ClInclude Include="..\common\misc.h" />
+    <ClInclude Include="..\common\MiscFunctions.h" />
+    <ClInclude Include="..\common\Mutex.h" />
+    <ClInclude Include="..\common\op_codes.h" />
+    <ClInclude Include="..\common\opcodemgr.h" />
+    <ClInclude Include="..\common\packet_dump.h" />
+    <ClInclude Include="..\common\packet_functions.h" />
+    <ClInclude Include="..\common\PacketStruct.h" />
+    <ClInclude Include="..\common\queue.h" />
+    <ClInclude Include="..\common\RC4.h" />
+    <ClInclude Include="..\common\seperator.h" />
+    <ClInclude Include="..\common\servertalk.h" />
+    <ClInclude Include="..\common\TCPConnection.h" />
+    <ClInclude Include="..\common\timer.h" />
+    <ClInclude Include="..\common\types.h" />
+    <ClInclude Include="..\common\version.h" />
+    <ClInclude Include="..\common\xmlParser.h" />
+    <ClInclude Include="..\World\MutexHelper.h" />
+    <ClInclude Include="..\World\MutexList.h" />
+    <ClInclude Include="..\World\MutexMap.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

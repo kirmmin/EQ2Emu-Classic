@@ -1,0 +1,11 @@
+**/bin
+**/devtools
+**/win
+**.vs
+**/LoginServer*/loginserver
+**/logs
+**/login_b
+**/distrib
+**/EQ2Minilogin*
+**/LoginServer/EQ2Login__Debug
+**/.svn*
